@@ -1,0 +1,1288 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+h2{
+    color: #7c4937;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;   
+}
+header{
+    position: relative;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0 0 0.4rem #7c4937;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a{
+    color: #7c4937;
+    font-size: 2.5rem;
+    font-family: 'Black And White Picture', sans-serif;
+}
+.menu i{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    color: #7c4937;
+    border: .2rem solid #7c4937;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.nav-list{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    background: #7c4937;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity .3s ease-out;
+}
+.nav-list.open{
+    opacity: 1;
+    visibility: visible;
+}
+.nav-list li{
+    padding: 0 1.5rem;
+    width: 100%;
+    border-bottom: 0.1rem solid #b98352;
+}
+.nav-list li:hover{
+    background: #b98352;
+}
+.nav-list li a{
+    font-size: 1.6rem;
+    color: #ffffff; 
+    display: block;
+    width: 100%; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    padding: 1rem 0;
+}
+.dropdown-recipes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.dropdown-recipes i{
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+.dropdown-content{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown-content.show{
+    display: flex;
+}
+.dropdown-content .dropdown-link{
+    font-size: 1.4rem;
+    transition: background .1s ease-in-out;
+    padding: 1rem 1rem;
+}
+.dropdown-content .dropdown-link:hover{
+    background: #7c4937;
+    border-radius: .3rem;
+}
+.dropdown-user{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1rem 0;
+    align-items: center;
+}
+.dropdown-user .dropdown-btn{
+    padding: 0;
+}
+.dropdown-user i{
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+.user-links{
+    display: none;
+    flex-direction: column;
+}
+.user-links.show{
+    display: flex;
+}
+.user-links .dropdown-link{
+    font-size: 1.4rem;
+    padding: 1rem 1rem;  
+    transition: background .1s ease-in-out;  
+}
+.user-links .dropdown-link:hover{
+    background: #7c4937;
+    border-radius: .3rem;
+}
+.hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero .hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 60%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+section{
+    margin: 0 auto;
+    padding: 10rem 0;
+    text-align: center;
+}
+.popular-container{
+    padding: 5rem 0;   
+}
+.card-popular{
+    margin: 0 auto;
+    text-align: left;
+    margin-bottom: 5rem;
+    box-shadow: 0 0 0.5rem #7c4937;
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+.card-popular:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 1rem #7c4937;
+}
+.card-popular .image{
+    width: 100%;
+    height: 25rem;
+    border-radius: .3rem .3rem 0 0;
+}
+.card-popular .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .3rem .3rem 0 0;
+}
+.popular-card-body{
+    padding: 2rem 1rem;    
+}
+.card-popular h3{
+    font-size: 1.6rem;
+    color: #7c4937;
+}
+.popular-card-body .description{
+    margin: 2rem 0;
+    padding: 2rem 0;
+    height: 15rem;
+    border-top: 0.2rem solid #f0f0f0;
+    border-bottom: 0.2rem solid #f0f0f0;
+}
+.popular-card-body p{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    word-break: break-word;
+}
+.popular-card-body a{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: #7c4937;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: background .3s ease-in-out;
+}
+.popular-card-body a:hover{
+    background: #b98352;
+}
+.recipe-container{
+    padding: 5rem 0;  
+}
+.card{
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    text-align: left;
+    box-shadow: 0 0 0.5rem #7c4937;
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 1rem #7c4937;
+}
+.card .image{
+    width: 100%;
+    height: 20rem;
+    border-radius: .3rem .3rem 0 0;
+}
+.card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .3rem .3rem 0 0;
+}
+.card-body{
+    padding: 2rem 1rem;    
+}
+.card-body h5{
+    font-size: 1.5rem;
+    color: #7c4937;
+}
+.card-body p{
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    height: 15rem;
+    border-top: 0.2rem solid #f0f0f0;
+    border-bottom: 0.2rem solid #f0f0f0;
+    color: #8a8a8a;
+    word-break: break-word;
+}
+.card-body a{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: #7c4937;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: background .3s ease-in-out;
+}
+.card-body a:hover{
+    background: #b98352;
+}
+.footer{
+    margin: 0;
+    padding: 0;
+    background: #7c4937;
+}
+.footer .container{
+    margin: 0;
+    padding: 0;
+}
+.footer .footer-logo{
+    margin: 0 1.5rem;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-logo h3{
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 100;
+    font-family: 'Black And White Picture', sans-serif;
+}
+.footer-logo p{
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+.footer .pages{
+    margin: 0;
+    padding: 2rem 0;
+    border-top: 0.2rem solid #b98352;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.footer .pages ul{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.footer .pages ul li{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+}
+.footer .pages ul li a{
+    font-size: 1.4rem;
+    color: #ffffff;
+    transition: color .2s ease-in-out;
+}
+.footer .pages ul li a:hover{
+    color: #e2be32;
+}
+.footer .media-links{
+    display: flex;
+    margin: 0;
+    padding: 1rem 0;
+    justify-content: center;
+    border-top: 0.2rem solid #b98352;
+}
+.footer .media-links a{
+    margin: 1rem;
+    color: #ffffff;
+    transition: color .2s ease-in-out;
+}
+.footer .media-links a:hover{
+    color: #e2be32;
+}
+.media-links i{
+    font-size: 2.5rem;
+}
+.footer .credentials{
+    border-top: 0.2rem solid #b98352;
+    height: auto;
+    padding: 1rem 0px;
+    text-align: center;
+}
+.credentials small{
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+/***********************RECIPES PAGE******************************/
+.recipes-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.recipes-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recipes-hero .recipes-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************RECIPES PAGE******************************/
+/***********************BREAKFAST PAGE******************************/
+.breakfast-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.breakfast-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.breakfast-hero .breakfast-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************BREAKFAST PAGE******************************/
+/***********************BREAD PAGE******************************/
+.bread-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.bread-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bread-hero .bread-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************BREAD PAGE******************************/
+/***********************BURGER PAGE******************************/
+.burger-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.burger-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.burger-hero .burger-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************BURGER PAGE******************************/
+/***********************MEAT PAGE******************************/
+.meat-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.meat-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.meat-hero .meat-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************MEAT PAGE******************************/
+/***********************SOUP PAGE******************************/
+.soup-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.soup-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.soup-hero .soup-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************SOUP PAGE******************************/
+/***********************PASTA PAGE******************************/
+.pasta-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.pasta-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pasta-hero .pasta-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************PASTA PAGE******************************/
+/***********************PIZZA PAGE******************************/
+.pizza-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.pizza-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pizza-hero .pizza-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************PIZZA PAGE******************************/
+/***********************VEGAN PAGE******************************/
+.vegan-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.vegan-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.vegan-hero .vegan-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************VEGAN PAGE******************************/
+/***********************CAKE PAGE******************************/
+.cake-hero{
+    height: calc(100vh - 6rem);
+    width: 100%;
+    margin: 0;
+}
+.cake-hero img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cake-hero .cake-hero-text{
+    margin-left: 1rem;
+    position: absolute;
+    height: 40rem;
+    width: 90%;
+    top: 20%;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0.2rem 0.2rem 0.5rem #111111;
+}
+
+/***********************CAKE PAGE******************************/
+/***********************RECIPE SHOW****************************/
+.container-recipe{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+}
+.container-show{
+    margin: 0 auto;
+    padding: 10rem 0;
+}
+.container-show h5{
+    font-size: 1.6rem;
+    color: #7c4937;
+}
+.container-show p{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    word-break: break-word;
+    margin: 1rem 0;
+}
+.container-show small{
+    font-size: 1.2rem;
+    color: #7c4937;
+}
+.container-show .recipe-image{
+    width: 100%;
+    height: 25rem;
+    max-width: 50rem;
+}
+.container-show .recipe-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0.1rem 0.2rem 1rem #7c4937;
+}
+.container-show .recipe-user{
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.container-show .recipe-user .user-image{
+    width: 10rem;
+    height: 10rem;
+}
+.container-show .recipe-user .user-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.container .container-fb{
+    margin: 0 auto;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.container-recipe .likes-container{
+    width: 100%;
+    text-align: end;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    align-items: center;
+}
+.likes-container .fa-thumbs-up{
+    color: rgb(74, 74, 165);
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+.likes-container .fa-thumbs-down{
+    color: rgb(196, 46, 46);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.container-recipe .likes-container small{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    margin-left: 0.2rem;
+}
+.active-link{
+    color: #e2be32 !important;
+}
+/*************************ABOUT PAGE**************************/
+.about{
+    margin: 0 auto;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+}
+.about .about-left-side{
+    margin: 0 auto;
+    width: 100%;
+    height: 40rem;
+}
+.about-left-side img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about .about-right-side{
+    padding: 2rem 0;
+}
+.about-right-side h3{
+    color: #7c4937;
+    font-size: 1.6rem;
+    padding: 2rem 0;
+}
+.about-right-side p{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    padding: 0.5rem 0;
+}
+/**********************CONTACT*****************************/
+.contact{
+    padding: 10rem 0;
+}
+.contact .left-side{
+    display: none;
+}
+.contact .right-side{
+    margin: 0 auto;
+    max-width: 50rem;
+}
+.contact .right-side h3{
+    margin: 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+    color: #7c4937;
+    font-size: 1.8rem;
+    padding: 2rem 0;
+}
+.contact .right-side label{
+    color: #7c4937;
+    font-size: 1.4rem;
+}
+.contact .right-side .col-md-6{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+.contact .right-side input{
+    width: 100%;
+    height: 3rem;
+    border: 1px solid #7c4937;
+    border-radius: .3rem;
+    padding: 0 0.5rem;
+    color: #7c4937;
+}
+.contact .right-side input:focus{
+    outline: none;
+    background: #e4e4e4;
+    color: #7c4937;
+}
+.contact .right-side textarea{
+    width: 100%;
+    height: 10rem;
+    border: 1px solid #7c4937;
+    border-radius: .3rem;
+    padding: 0.5rem;
+    color: #7c4937;
+}
+.contact .right-side textarea:focus{
+    outline: none;
+    background: #e4e4e4;
+    color: #7c4937;
+}
+.contact .right-side .btn{
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    background: #7c4937;
+    border-radius: .3rem;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+.contact .right-side .btn:hover{
+    background: #b98352;
+}
+@media screen and (min-width: 450px){
+
+    .popular-container{
+        padding: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        align-items: flex-start;
+        grid-column-gap: 2rem; 
+        grid-row-gap: 5rem;   
+    }
+    .card-popular{
+        width: 35rem;
+    }
+    .card-popular .image{
+        width: 35rem;
+        height: 25rem;
+    }
+    .recipe-container{
+        padding: 5rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        align-items: flex-start;
+        grid-column-gap: 2rem; 
+        grid-row-gap: 5rem;   
+    }
+    .card{
+        width: 30rem;
+    }
+    .card .image{
+        width: 30rem;
+        height: 20rem;
+    }
+}
+
+@media only screen and (min-width: 650px){
+    .hero .hero-text{
+        margin-left: 40px;
+        font-size: 40px;
+    }
+    .footer .container{
+        margin: 0px auto;
+        display: flex;
+        text-align: center;
+        width: 90%;
+        justify-content: space-between;
+    }
+    .container .footer-logo{
+        width: 40%;
+        text-align: left;
+    }
+    .container .pages{
+        width: 60%;
+        margin: 20px 0;
+        border: none;
+        padding: 0px;
+    }
+}
+@media only screen and (min-width: 850px){
+    @supports(position:sticky){
+        header{
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 8rem;
+            box-shadow: 0 0 0.6rem #7c4937;
+            z-index: 1;
+        }
+    }
+    .logo a{
+        font-size: 3rem;
+    }
+    .menu i{
+        display: none;
+    }
+    .nav-list{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: inherit;
+        left: inherit;
+        width: 100%;
+        background: none;
+        display: flex;
+        flex: 0;
+        flex-direction: row;        
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+    }
+    .nav-list li{
+        padding: 0;
+        width: auto;
+        border-bottom: none;
+    } 
+    .nav-list li:not(:last-of-type){
+        margin: 0 2rem;
+    }
+    .nav-list li:last-of-type{
+        margin-left: 2rem;
+    }
+    .nav-list li:hover{
+        background: none;
+    }
+    .nav-list li a{
+        font-size: 1.8rem;
+        color: #7c4937; 
+        display: inline-block;
+        width: auto; 
+        padding: 0;
+        transition: color .2s ease-in-out;
+    }
+    .nav-list li a:hover{
+        color: #e2be32;
+    }
+    .dropdown-recipes i{
+        font-size: 1.8rem;
+        color: #7c4937;
+    }
+    .dropdown-content{
+        position: absolute;
+        display: none;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 0 0.5rem #7c4937;
+        border-radius: 0.3rem;
+    }
+    .dropdown-content .dropdown-link{
+        font-size: 1.5rem;
+        width: 100%;
+        display: block;
+        transition: background .1s ease-in-out;
+        transition: color .1s ease-in-out;
+        padding: 1rem 1rem;
+    }
+    .dropdown-content .dropdown-link:hover{
+        background: #b98352;
+        color: #ffffff;
+        border-radius: 0;
+    }    
+    .dropdown-user{
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 0;
+    }
+    .dropdown-user i{
+        font-size: 1.8rem;
+        color: #7c4937;
+        transition: color .2s ease-in-out;
+    }
+    .dropdown-user i:hover{
+        color: #e2be32;
+    }
+    .user-links{
+        position: absolute;
+        display: none;
+        right: -1rem;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 0 0.5rem #7c4937;
+        border-radius: 0.3rem;
+    }
+    .user-links.show{
+        display: flex;
+    }
+    .user-links .dropdown-link{
+        font-size: 1.5rem;
+        width: 100%;
+        display: block;
+        transition: background .1s ease-in-out;
+        transition: color .1s ease-in-out;
+        padding: 1rem 1rem; 
+    }
+    .user-links .dropdown-link:hover{
+        background: #b98352;
+        color: #ffffff;
+        border-radius: 0;
+    }
+    .hero{
+        height: calc(100vh - 8rem);
+    }
+    .hero .hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        width: 70%;
+    }
+    .footer-logo h3{
+        font-size: 3rem;
+    }
+
+    /***********************RECIPES PAGE***************************/
+    .recipes-hero{
+        height: calc(100vh - 8rem);
+    }
+    .recipes-hero .recipes-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************RECIPES PAGE***************************/
+
+    /***********************BREAKFAST PAGE****************************/
+    .breakfast-hero{
+        height: calc(100vh - 8rem);
+    }
+    .breakfast-hero .breakfast-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************BREAKFAST PAGE****************************/
+    /***********************BREAD PAGE****************************/
+    .bread-hero{
+        height: calc(100vh - 8rem);
+    }
+    .bread-hero .bread-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************BREAD PAGE****************************/
+    /***********************BURGER PAGE****************************/
+    .burger-hero{
+        height: calc(100vh - 8rem);
+    }
+    .burger-hero .burger-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************BURGER PAGE****************************/
+    /***********************MEAT PAGE****************************/
+    .meat-hero{
+        height: calc(100vh - 8rem);
+    }
+    .meat-hero .meat-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************MEAT PAGE****************************/
+    /***********************SOUP PAGE****************************/
+    .soup-hero{
+        height: calc(100vh - 8rem);
+    }
+    .soup-hero .soup-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************SOUP PAGE****************************/
+    /***********************PASTA PAGE****************************/
+    .pasta-hero{
+        height: calc(100vh - 8rem);
+    }
+    .pasta-hero .pasta-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************PASTA PAGE****************************/
+    /***********************PIZZA PAGE****************************/
+    .pizza-hero{
+        height: calc(100vh - 8rem);
+    }
+    .pizza-hero .pizza-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************PIZZA PAGE****************************/
+    /***********************VEGAN PAGE****************************/
+    .vegan-hero{
+        height: calc(100vh - 8rem);
+    }
+    .vegan-hero .vegan-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+
+    /***********************VEGAN PAGE****************************/
+    /***********************CAKE PAGE****************************/
+    .cake-hero{
+        height: calc(100vh - 8rem);
+    }
+    .cake-hero .cake-hero-text{
+        margin-left: 5rem;
+        font-size: 4.5rem;
+        top: 50%;
+    }
+    /***********************CAKE PAGE****************************/
+    /***********************RECIPE SHOW**************************/
+    .container-show h5{
+        font-size: 1.8rem;
+        color: #7c4937;
+    }
+    .container-show p{
+        font-size: 1.4rem;
+        color: #8a8a8a;
+        word-break: break-word;
+        margin: 1rem 0;
+    }
+    .container-show small{
+        font-size: 1.3rem;
+        color: #7c4937;
+    }
+    .container-show .recipe-image{
+        width: 50rem;
+        height: 30rem;
+        max-width: 50rem;
+    }
+}
+@media only screen and (min-width: 1000px){
+    .hero .hero-text{
+        font-size: 5rem;
+        width: 50%;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    .card-popular h3{
+        font-size: 2rem;
+    }
+    .popular-card-body p{
+        font-size: 1.4rem;
+    }
+    .popular-card-body a{
+        font-size: 1.4rem;
+    }
+    .card-body h5{
+        font-size: 1.8rem;
+    }
+    .card-body p{
+        font-size: 1.4rem;
+    }
+    .card-body a{
+        font-size: 1.4rem;
+    }
+    .footer-logo h3{
+        font-size: 4rem;
+    }
+    .footer-logo p{
+        font-size: 1.5rem;
+    }
+    .footer .pages ul li a{
+        font-size: 1.5rem;
+    }
+    .footer .media-links a{
+        margin: 1rem 2rem;
+    }
+    .media-links i{
+        font-size: 3.2rem;
+    }
+    .container-show{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container-show .container-fb{
+        padding: 0;
+        max-width: 50%;
+    }
+    /*************************ABOUT PAGE**************************/
+    .about{
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+    }
+    .about .about-left-side{
+        width: 50%;
+        height: 60rem;
+        margin-right: 2rem;
+    }
+    .about .about-right-side{
+        padding: 0;
+        width: 50%;
+    }
+    .about-right-side h3{
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    .about-right-side p{
+        font-size: 1.6rem;
+    }
+    /**********************CONTACT*****************************/
+    .contact{
+        padding: 10rem 0;
+        display: flex;
+        flex-direction: row;
+    }
+    .contact .left-side{
+        display: block;
+        width: 50%;
+        height: 60rem;
+        margin-right: 2rem;
+    }
+    .contact .left-side img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .contact .right-side{
+        width: 40%;
+        max-width: 100%;
+    }
+    .contact .right-side h3{
+        color: #7c4937;
+        font-size: 2.5rem;
+        padding: 0;
+        margin-bottom: 5rem;
+    }
+    .contact .right-side label{
+        font-size: 1.6rem;
+    }
+    .contact .right-side .col-md-6{
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .contact .right-side input{
+        font-size: 1.5rem;
+        height: 4rem;
+        border: 1px solid #7c4937;
+        border-radius: .3rem;
+        padding: 0 1rem;
+        color: #7c4937;
+    }
+    .contact .right-side textarea{
+        width: 100%;
+        height: 15rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    .contact .right-side .btn{
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (min-width: 1350px){
+    .logo a{
+        font-size: 4rem;
+    }
+    .hero .hero-text{
+        margin-left: 10rem;
+    }
+    .footer-logo h3{
+        font-size: 6rem;
+    }
+    .footer .pages ul li a{
+        font-size: 1.6rem;
+    }
+}

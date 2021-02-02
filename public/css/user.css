@@ -1,0 +1,533 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    font-family: 'Ubuntu', 'sans-serif';
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    color: #7c4937;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;   
+}
+header{
+    position: relative;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7c4937;
+    box-shadow: 0 0 0.4rem #7c4937;
+}
+h3{
+    color: #7c4937;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.sidepanel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a{
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    font-family: 'Black And White Picture', sans-serif;
+}
+.sidepanel .menu{
+    border: 0.1rem solid #ffffff;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.sidepanel .dropdown-menu{
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    background: #7c4937;
+    width: 100%;
+    height: 0rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all .3s ease-in-out;
+}
+.dropdown-menu.open{
+    height: 19rem;
+    overflow: visible;
+}
+.profile{
+    padding: 2rem 0;
+    transition: .3s ease-in-out;
+}
+.profile.down{
+    margin-top: 19rem;    
+}
+.dropdown-menu li{
+    padding: 0 1.5rem;
+    width: 100%;
+    border-bottom: 0.1rem solid #b98352;
+    overflow: hidden;
+}
+.dropdown-menu li:hover{
+    background: #b98352;
+}
+.dropdown-menu a{
+    font-size: 1.6rem;
+    color: #ffffff; 
+    display: block;
+    width: 100%; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    padding: 1rem 0;
+}
+.card{
+    margin: 0 auto;
+    max-width: 50rem;
+    padding: 1rem 1rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #7c4937;
+    border-radius: 0.5rem;
+}
+.card .card-header{
+    text-align: left;
+    padding: 1rem 0;
+    border-bottom: 0.1rem solid #7c4937;
+}
+.card .recipe-image{
+    margin: 0 auto;
+    width: 15rem;
+    height: 10rem;
+}
+.card .recipe-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .card-image{
+    margin: 0 auto;
+    width: 15rem;
+    height: 15rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card .card-text{
+    margin: 2rem 0;
+}
+.card .card-text p{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    margin-bottom: 0.5rem;
+}
+.card .card-text span{
+    font-size: 1rem;
+    color: #7c4937;
+    word-break: break-word;
+}
+.card-footer{
+    padding: 2rem 0;
+    border-top: 0.1rem solid #7c4937;
+}
+.card-footer a{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: #7c4937;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: background .3s ease-in-out;
+}
+.card-footer a:hover{
+    background: #b98352;
+}
+.card-footer .btn-danger{
+    background: #be3f3f;
+}
+.card-footer .btn-danger:hover{
+    background: #c25f5f;
+}
+.card .avatar-container{
+    margin: 0 auto;
+    width: 10rem;
+    height: 10rem;
+    margin-top: 2rem;
+}
+.avatar-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card-body{
+    margin-top: 2rem;
+}
+.card-body .recipes{
+    padding-top: 2rem;
+    border-top: 0.1rem solid #f0f0f0;
+}
+.card-body .recipes a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    background: #7c4937;
+    border-radius: .3rem;
+    margin-bottom: 1rem;
+}
+.form-group{
+    margin: 1rem 0;
+}
+.image-preview{
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    width: 20rem;
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #7c4937;
+}
+.image-preview .imageRecipe-preview{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 0.5rem;
+}
+.card-body label{
+    font-size: 1.3rem;
+    color: #7c4937;
+}
+.card-body small{
+    color: #e02f2f;
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
+}
+.row .image-upload{
+    font-size: 1.4rem;
+    background: white;
+    border-radius: 0.3rem;
+    width: 100%;
+    box-shadow: 0.1rem 0.1rem 0.5rem #7c4937;
+    outline: none;
+    margin-top: 1rem;    
+}
+::-webkit-file-upload-button{
+    color: white;
+    background: #7c4937;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.3rem 0 0 0.3rem;
+    box-shadow: 0.1rem 0 0.1rem 0.1rem #7c4937;
+    outline: none;
+    cursor: pointer;
+    transition: background .1s ease-in-out;
+}
+::-webkit-file-upload-button:hover{
+    background: #b98352;
+}
+.form-group input{
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    outline: none;
+    padding: 1rem 0.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #7c4937;
+    color: #7c4937;
+    font-size: 1.3rem;
+}
+.card-body select{
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    outline: none;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #7c4937;
+    color: #7c4937;
+    font-size: 1.3rem;
+}
+.card-body input:focus{
+    background: #f0f0f0;
+}
+.card-body textarea{
+    width: 100%;
+    height: 10rem;
+    margin-top: 1rem;
+    outline: none;
+    padding: 1rem 0.5rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #7c4937;
+    color: #7c4937;
+    font-size: 1.3rem;
+}
+.card-body textarea:focus{
+    background: #f0f0f0;
+}
+.card button{
+    border: none;
+    background: #7c4937;
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background .3s ease-in-out;
+}
+.card button:hover{
+    background: #925741;
+}
+section{
+    margin: 5rem 0;
+    text-align: center;
+}
+.box{
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    text-align: left;
+    box-shadow: 0 0 0.5rem #7c4937;
+    border-radius: .3rem;
+}
+.box .image{
+    width: 100%;
+    height: 20rem;
+    border-radius: .3rem .3rem 0 0;
+}
+.box .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .3rem .3rem 0 0;
+}
+.box-title{
+    padding: 2rem 1rem;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+.box-title h5{
+    font-size: 1.5rem;
+    color: #7c4937;
+}
+.box-body{
+    padding: 1rem 1rem;
+}
+.box-body .box-text{
+    padding: 0.5rem 0;
+}
+.box-text p{
+    font-size: 1.2rem;
+    color: #8a8a8a;
+    margin-bottom: 0.5rem;
+}
+.box-text span{
+    font-size: 1rem;
+    color: #7c4937;
+    word-break: break-word;
+}
+.box-footer{
+    padding: 2rem 1rem;
+    border-top: 0.1rem solid #f0f0f0;
+}
+.box-footer a{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background: #7c4937;
+    font-size: 1.2rem;
+    border-radius: .3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: background .3s ease-in-out;
+}
+.box-footer a:hover{
+    background: #b98352;
+}
+.box-footer .btn-danger{
+    background: #be3f3f;
+}
+.box-footer .btn-danger:hover{
+    background: #c25f5f;
+}
+.alert-message{
+    color: #ffffff;
+    background: #7c4937;
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+}
+.invalid-feedback{
+    display: inline-block;
+    color: #e02f2f;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+@media screen and (min-width: 450px){
+    .recipe-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        align-items: flex-start;
+        grid-column-gap: 5rem; 
+        grid-row-gap: 5rem;   
+    }
+    .box{
+        width: 35rem;
+    }
+    .box .image{
+        width: 35rem;
+        height: 20rem;
+    }
+}
+@media screen and (min-width: 850px){
+    .sidepanel .menu{
+        display: none;
+    }
+    header{
+        position: fixed;
+        height: 100vh;
+        width: 20rem;
+        display: initial;
+        flex-direction: initial;
+        justify-content: initial;
+        align-items: initial;
+        text-align: center;
+    }
+    header .container{
+        padding: 0;
+    }
+    .sidepanel{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: initial;
+    }
+    .sidepanel .dropdown-menu{
+        position: initial;
+        top: initial;
+        left: initial;
+        background: none;
+        width: initial;
+        height: initial;
+        overflow: visible;
+        display: initial;
+        flex-direction: initial;
+        align-items: initial;
+        text-align: initial;
+        transition: none;
+        padding-top: 10rem;
+    }
+    .dropdown-menu a{
+        font-size: 1.8rem;
+    }
+    .profile{
+        margin-left: 20rem;
+        padding: 5rem 0;
+        transition: none;
+    }
+    .logo{      
+        border-bottom: 0.2rem solid #b98352;
+    }
+    .logo a{
+        font-size: 3rem;
+        display: block;
+        padding: 2rem 0;
+    }
+    .card{
+        max-width: 80rem;
+    }
+    .card-body{
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .card .card-text p{
+        font-size: 1.4rem;
+    }
+    .card .card-text span{
+        font-size: 1.1rem;
+    }
+    .card-footer a{
+        font-size: 1.4rem;
+    }
+    .card .avatar-container{
+        width: 15rem;
+        height: 15rem;
+    }
+    .card-body .recipes a{
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+    .card-body form{
+        padding: 2rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+    .card-body label{
+        font-size: 1.4rem;
+        color: #7c4937;
+    }
+    .card-body form .input{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-right: 1rem;
+    }
+    .form-group{
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .card button{
+        font-size: 1.5rem;
+    }
+    .box-title h5{
+        font-size: 1.8rem;
+    }
+    .box-text p{
+        font-size: 1.4rem;
+    }
+    .box-text span{
+        font-size: 1.1rem;
+    }
+    .box-footer a{
+        font-size: 1.4rem;
+    }
+    .invalid-feedback{
+        font-size: 1.2rem;
+    }
+}

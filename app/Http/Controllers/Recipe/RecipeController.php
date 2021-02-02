@@ -80,7 +80,7 @@ class RecipeController extends Controller
                 $administrator->notify(new NewRecipeNotification($recipe, $user));
             }
 
-        return redirect(route('user.index'))->with('message', 'Recipe Created. Please wait for approval.');
+        return redirect()->route('user.index')->with('message', 'Recipe Created. Please wait for approval.');
     }
 
     public function show($id)
@@ -151,7 +151,7 @@ class RecipeController extends Controller
                 $administrator->notify(new RecipeUpdateNotification($recipe, $user));
             }
 
-        return redirect(route('user.index'))->with('message', 'Recipe Updated. Please wait for approval.');
+        return redirect()->route('user.index')->with('message', 'Recipe Updated. Please wait for approval.');
     }
 
     public function destroy(Recipe $recipe)
@@ -160,6 +160,6 @@ class RecipeController extends Controller
 
         $recipe->delete(); 
         
-        return redirect(route('user.index'))->with('message', 'Recipe Deleted Successfully');
+        return redirect()->route('user.index')->with('message', 'Recipe Deleted Successfully');
     }
 }

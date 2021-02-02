@@ -46,7 +46,7 @@ class AdminController extends Controller
             return redirect()->back()->with('message', 'Please approve the recipe');
         }        
 
-        return redirect(route('admin.index'))->with('message', 'Recipe approved');
+        return redirect()->route('admin.index')->with('message', 'Recipe approved');
     }
 
     public function destroy(Recipe $recipe)
@@ -57,7 +57,7 @@ class AdminController extends Controller
         
         $recipe->user->notify(new DeletedRecipeNotification($recipe));
 
-        return redirect(route('admin.index'))->with('message', 'Recipe Deleted Successfully');
+        return redirect()->route('admin.index')->with('message', 'Recipe Deleted Successfully');
     }
 
     public function userRecipes()

@@ -108,12 +108,21 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Update') }}
                                     </button>
-                                    <a href="" class="btn btn-danger">{{ __('Delete Account') }}</a>
+                                    <a href="{{ route('user.destroy',auth()->id()) }}" class="btn btn-danger" onclick="event.preventDefault();
+                                        if(confirm('Are you sure?')){
+                                            document.getElementById('form-delete-{{ auth()->id() }}')
+                                            .submit()
+                                        }">{{ __('Delete') }}
+                                        </a>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
+                <form action="{{ route('user.destroy',auth()->id()) }}" id="{{ 'form-delete-'.auth()->id() }}" method="post" style="display:none">
+                    @csrf
+                    @method('delete')
+                </form>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ class UserController extends Controller
         return view('user.edit');
     }
 
-    public function update()
+    public function update(Request $request)
     {
         request()->validate([
             'name' => 'required|string',
@@ -71,8 +71,17 @@ class UserController extends Controller
         return redirect()->back()->with('message', 'Profile Updated');
     }
 
-    public function destroy()
-    {
+    public function destroy(User $user)
+    {   
+        Storage::disk('public')->delete("images/user/".Auth::id()."/".Auth::user()->avatar);
         
+        foreach ($user->recipes as $recipe) {
+
+            Storage::disk('public')->delete("images/$recipe->type/$recipe->image");
+        }
+
+        $user->delete();
+
+        return redirect(route('home'));
     }
 }

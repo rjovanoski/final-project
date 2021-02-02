@@ -9,7 +9,9 @@
         </div>
         <div class="right-side">                          
             <h3 class="title">{{ __('Contact Us') }}</h3>
-                <form action="" method="POST">
+            <x-alert />
+                <form action="{{ route('contact') }}" method="POST">
+                    @csrf
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -51,7 +53,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
-                            <button class="btn" type="submit" name="submit">{{ __('Submit') }}</button>
+                            <button class="btn" type="submit">{{ __('Send Message') }}</button>
                         </div>
                     </div>
                 </form>  

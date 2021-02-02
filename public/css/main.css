@@ -823,6 +823,18 @@ section{
 .contact .right-side .btn:hover{
     background: #b98352;
 }
+.alert-message{
+    color: #7c4937;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+.invalid-feedback{
+    display: inline-block;
+    color: #e02f2f;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
 @media screen and (min-width: 450px){
 
     .popular-container{

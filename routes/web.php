@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Page\PageController@index')->name('home');
-Route::get('/about', 'Page\PageController@about')->name('about');
-Route::get('/contact', 'Page\PageController@contact')->name('contact');
-Route::get('/recipes', 'Page\PageController@recipes')->name('recipes');
+Route::get('about', 'Page\PageController@about')->name('about');
+
+Route::get('contact', 'Contact\ContactUsController@create')->name('contact');
+Route::post('contact', 'Contact\ContactUsController@store');
+
+Route::get('recipes', 'Page\PageController@recipes')->name('recipes');
 
 Route::group(['prefix' => 'recipes', 'namespace' => 'Page', 'as' => 'recipes.'], function(){
     Route::get('breakfast', 'PageController@breakfast')->name('breakfast');

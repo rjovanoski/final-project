@@ -89,7 +89,7 @@
                             <label for="preparation_time" class="col-md-4 col-form-label text-md-right">{{ __('Preparation time in minutes') }}<small>*</small></label>
 
                             <div class="col-md-6">
-                                <input id="preparation_time" type="text" class="form-control @error('preparation_time') is-invalid @enderror" name="preparation_time" value="{{ old('preparation_time') }}">
+                                <input id="preparation_time" type="number" min="1" class="form-control @error('preparation_time') is-invalid @enderror" name="preparation_time" value="{{ old('preparation_time') }}">
 
                                 @error('preparation_time')
                                     <span class="invalid-feedback" role="alert">

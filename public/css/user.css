@@ -47,6 +47,12 @@ h3{
     font-size: 2.5rem;
     text-transform: uppercase;
 }
+h4{
+    color: #7c4937;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
 .sidepanel{
     display: flex;
     flex-direction: row;
@@ -196,8 +202,7 @@ h3{
     margin-top: 2rem;
 }
 .card-body .recipes{
-    padding-top: 2rem;
-    border-top: 0.1rem solid #f0f0f0;
+    padding-top: 1rem;    
 }
 .card-body .recipes a{
     display: inline-block;

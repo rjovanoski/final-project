@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     .js('resources/js/main.js', 'public/js')
     .js('resources/js/user.js', 'public/js')
+    .js('resources/js/file_preview.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');

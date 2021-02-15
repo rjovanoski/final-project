@@ -81,30 +81,50 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/user.js":
-/*!******************************!*\
-  !*** ./resources/js/user.js ***!
-  \******************************/
+/***/ "./resources/js/file_preview.js":
+/*!**************************************!*\
+  !*** ./resources/js/file_preview.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var toggle = document.querySelector('.menu');\nvar dropdown = document.querySelector('.dropdown-menu');\nvar main = document.querySelector('.profile');\ntoggle.addEventListener(\"click\", function () {\n  dropdown.classList.toggle(\"open\");\n  main.classList.toggle(\"down\");\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvdXNlci5qcz84MDkxIl0sIm5hbWVzIjpbInRvZ2dsZSIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsImRyb3Bkb3duIiwibWFpbiIsImFkZEV2ZW50TGlzdGVuZXIiLCJjbGFzc0xpc3QiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLE9BQXZCLENBQWI7QUFDQSxJQUFJQyxRQUFRLEdBQUdGLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixnQkFBdkIsQ0FBZjtBQUNBLElBQUlFLElBQUksR0FBR0gsUUFBUSxDQUFDQyxhQUFULENBQXVCLFVBQXZCLENBQVg7QUFFQUYsTUFBTSxDQUFDSyxnQkFBUCxDQUF3QixPQUF4QixFQUFpQyxZQUFLO0FBQ3RDRixVQUFRLENBQUNHLFNBQVQsQ0FBbUJOLE1BQW5CLENBQTBCLE1BQTFCO0FBQ0FJLE1BQUksQ0FBQ0UsU0FBTCxDQUFlTixNQUFmLENBQXNCLE1BQXRCO0FBQ0MsQ0FIRCIsImZpbGUiOiIuL3Jlc291cmNlcy9qcy91c2VyLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsibGV0IHRvZ2dsZSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5tZW51Jyk7XG5sZXQgZHJvcGRvd24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuZHJvcGRvd24tbWVudScpO1xubGV0IG1haW4gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcucHJvZmlsZScpO1xuXG50b2dnbGUuYWRkRXZlbnRMaXN0ZW5lcihcImNsaWNrXCIsICgpID0+e1xuZHJvcGRvd24uY2xhc3NMaXN0LnRvZ2dsZShcIm9wZW5cIik7XG5tYWluLmNsYXNzTGlzdC50b2dnbGUoXCJkb3duXCIpOyBcbn0pOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/user.js\n");
+var inputFile = document.getElementById("image");
+var previewContainer = document.getElementById("previewContainer");
+var previewImage = previewContainer.querySelector(".imageRecipe-preview");
+var previewDefaultText = previewContainer.querySelector(".default-text");
+inputFile.addEventListener("change", function () {
+  var file = this.files[0];
+
+  if (file) {
+    var reader = new FileReader();
+    previewDefaultText.style.display = "none";
+    previewImage.style.display = "block";
+    reader.addEventListener("load", function () {
+      previewImage.setAttribute("src", this.result);
+    });
+    reader.readAsDataURL(file);
+  } else {
+    previewDefaultText.style.display = null;
+    previewImage.style.display = null;
+    previewImage.setAttribute("src", "");
+  }
+});
 
 /***/ }),
 
-/***/ 3:
-/*!************************************!*\
-  !*** multi ./resources/js/user.js ***!
-  \************************************/
+/***/ 2:
+/*!********************************************!*\
+  !*** multi ./resources/js/file_preview.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/final-project/resources/js/user.js */"./resources/js/user.js");
+module.exports = __webpack_require__(/*! /mnt/5200A07100A05E2B/MyProjects/ca-final/resources/js/file_preview.js */"./resources/js/file_preview.js");
 
 
 /***/ })

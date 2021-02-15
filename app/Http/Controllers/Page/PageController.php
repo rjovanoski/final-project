@@ -113,4 +113,10 @@ class PageController extends Controller
 
         return view('pages.recipe-view', compact('recipe'));
     }
+
+    public function recipeShow($id)
+    {
+        return $recipe = Recipe::find($id);
+
+    }
 }

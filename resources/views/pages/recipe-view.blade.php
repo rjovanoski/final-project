@@ -15,6 +15,12 @@
                     <div class="user-name">
                         <p>Created by: <small>{{ $recipe->user->name }}</small></p>
                         <p>Created: <small>{{ $recipe->created_at->diffForHumans() }}</small></p>
+                        @isset($recipe->user->facebook)
+                            <a href="{{ $recipe->user->facebook }}"><i class="fab fa-facebook"></i></a>
+                        @endisset
+                        @isset($recipe->user->twitter)
+                            <a href="{{ $recipe->user->twitter }}"><i class="fab fa-twitter"></i></a>
+                        @endisset
                     </div>
                     @isset($recipe->user->avatar)
                     <div class="user-image">
@@ -38,10 +44,6 @@
                     <p>Description:</p>
                     <small>{{ $recipe->description }}</small> 
                 </div>         
-            </div>
-            <div class="likes-container">
-                <i class="fas fa-thumbs-up"><small>(0)</small></i>
-                <i class="fas fa-thumbs-down"><small>(0)</small></i>
             </div>
         </div>
         <div class="container-fb">

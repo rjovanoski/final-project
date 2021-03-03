@@ -26,8 +26,7 @@ Route::group(['prefix' => 'recipes', 'namespace' => 'Page', 'as' => 'recipes.'],
 Auth::routes();
 
 Route::resource('/user', 'User\UserController')->except('create', 'show', 'store');
-
-Route::resource('/recipe', 'Recipe\RecipeController');
+Route::delete('/user/{user}/avatar/delete', 'User\UserController@avatarDestroy')->name('user.avatar.delete');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function(){
     Route::get('/', 'AdminController@index')->name('index');
@@ -36,3 +35,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
     Route::get('user/recipes', 'AdminController@userRecipes')->name('userRecipes');
     Route::delete('recipe/{recipe}', 'AdminController@destroy')->name('destroy');
 });
+
+Route::resource('/recipe', 'Recipe\RecipeController');

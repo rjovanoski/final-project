@@ -84,4 +84,16 @@ class UserController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function avatarDestroy(User $user)
+    {
+        
+        Storage::disk('public')->delete("images/user/".Auth::id()."/".Auth::user()->avatar);
+        
+        auth()->user()->update([
+            'avatar' => request()->avatar
+        ]);
+
+        return redirect()->back()->with('message', 'Avatar Deleted');
+    }
 }

@@ -34,9 +34,10 @@
                                     {{ __('Pending') }}
                                     @endif
                                 </td>
+                                @if($recipe->status == 0)
                                 <td>
                                     <a href="{{ route('admin.edit',$recipe->id) }}" class="btn btn-primary">{{ __('Edit') }}</a>
-                                    <a href="{{ route('admin.destroy',$recipe->id) }}" onclick="event.preventDefault();
+                                    <a href="{{ route('admin.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                         if(confirm('Are you sure?')){
                                             document.getElementById('form-destroy-{{$recipe->id}}')
                                             .submit()
@@ -47,6 +48,7 @@
                                         @method('delete')
                                     </form>
                                 </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

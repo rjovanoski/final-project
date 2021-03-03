@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
    <script src="{{ asset('js/user.js') }}" defer></script>
-
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">

@@ -63,6 +63,7 @@
                             <a href="{{ route('user.index') }}" class="dropdown-link">{{ __('Profile') }}</a>
                             <a href="{{ route('recipe.index') }}" class="dropdown-link">{{ __('My Recipes') }}</a>
                             <a href="{{ route('recipe.create') }}" class="dropdown-link">{{ __('New Recipe') }}</a>
+                            <a href="{{ route('user.edit',auth()->id()) }}" class="dropdown-link">{{ __('Settings') }}</a>
                         @endif
                             <a class="dropdown-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

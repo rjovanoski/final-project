@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body"> 
                     <x-alert />
-                    <table class="table table-bordered">
+                    <table>
                         <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -24,7 +24,7 @@
                         <tbody>
                             @foreach($recipes as $recipe)
                             <tr>                            
-                                <th scope="row">{{ $recipe->id }}</th>
+                                <td>{{ $recipe->id }}</td>
                                 <td>{{ $recipe->name }}</td>
                                 <td>{{ $recipe->user->name }}</td>
                                 <td>
@@ -33,10 +33,10 @@
                                     @else
                                     {{ __('Pending') }}
                                     @endif
-                                </td>
-                                @if($recipe->status == 0)
+                                </td>                                
                                 <td>
-                                    <a href="{{ route('admin.edit',$recipe->id) }}" class="btn btn-primary">{{ __('Edit') }}</a>
+                                    @if($recipe->status == 0)
+                                    <a href="{{ route('admin.edit',$recipe->id) }}" class="btn btn-primary">{{ __('View') }}</a>
                                     <a href="{{ route('admin.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                         if(confirm('Are you sure?')){
                                             document.getElementById('form-destroy-{{$recipe->id}}')
@@ -47,8 +47,10 @@
                                         @csrf
                                         @method('delete')
                                     </form>
+                                    @else
+                                    {{ __('Not Allowed') }}
+                                    @endif
                                 </td>
-                                @endif
                             </tr>
                             @endforeach
                         </tbody>

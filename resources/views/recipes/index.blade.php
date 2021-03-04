@@ -33,6 +33,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$breakfast->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$breakfast->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$breakfast->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -80,6 +81,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$bread->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$bread->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$bread->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -127,6 +129,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$burger->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$burger->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$burger->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -174,6 +177,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$meat->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$meat->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$meat->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -221,6 +225,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$pasta->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$pasta->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$pasta->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -268,6 +273,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$pizza->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$pizza->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$pizza->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -315,6 +321,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$soup->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$soup->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$soup->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -362,6 +369,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$vegan->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$vegan->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$vegan->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){
@@ -409,6 +417,7 @@
                             </div>
                         </div>
                         <div class="box-footer">
+                            <a href="{{ route('recipe.show',$cake->id) }}" class="btn btn-info">{{ __('Show') }}</a>
                             <a href="{{ route('recipe.edit',$cake->id) }}" class="btn btn-primary">{{ __('Update') }}</a>
                             <a href="{{ route('recipe.destroy',$cake->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                 if(confirm('Are you sure?')){

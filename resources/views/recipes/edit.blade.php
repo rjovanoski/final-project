@@ -121,6 +121,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Update') }}
                                 </button>
+                                <a href="{{ route('user.index') }}" class="btn btn-danger">{{ __('Cancel') }}</a>
                             </div>
                         </div>
                     </form>

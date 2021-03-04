@@ -25,14 +25,14 @@ class AdminController extends Controller
 
     public function edit($id)
     {
-        $recipe = Recipe::find($id);
+        $recipe = Recipe::findOrFail($id);
 
         return view('admin.edit', compact('recipe'));
     }
 
     public function update($id)
     {
-        $recipe = Recipe::find($id);
+        $recipe = Recipe::findOrFail($id);
         
         if (request()->status && request()->status == 1) {
 

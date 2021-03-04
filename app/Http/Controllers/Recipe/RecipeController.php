@@ -87,7 +87,7 @@ class RecipeController extends Controller
     {
         $userId = Auth::id();
 
-        $recipe = Recipe::where('user_id', $userId)->where('status', '=', 1)->find($id);
+        $recipe = Recipe::where('user_id', $userId)->where('status', '=', 1)->findOrFail($id);
 
         return view('recipes.show', compact('recipe'));
     }
@@ -96,7 +96,7 @@ class RecipeController extends Controller
     {
         $userId = Auth::id();
 
-        $recipe = Recipe::where('user_id', $userId)->where('status', '=', 1)->find($id); 
+        $recipe = Recipe::where('user_id', $userId)->where('status', '=', 1)->findOrFail($id); 
 
         return view('recipes.edit', compact('recipe'));
     }

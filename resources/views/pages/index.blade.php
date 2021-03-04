@@ -8,31 +8,6 @@
 </div>
 
 <div class="container">
-    <section class="popular">
-        <h2>{{ __('Popular Recipes') }}</h2>
-            <div class="popular-container">
-                <div class="card-popular">
-                    <div class="image">
-                        <img src="" alt="">
-                    </div>
-                    <div class="popular-card-body">
-                        <div class="name">
-                            <h3>Lorem, ipsum dolor.</h3>
-                        </div>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Reprehenderit quod, aperiam nesciunt ab maxime, magni architecto sint, 
-                                culpa voluptatem placeat enim aspernatur libero iure ad facere quisquam 
-                                mollitia dolorem odit.
-                            </p>
-                        </div>
-                        <div class="link">
-                            <a href="">See recipe</a>
-                        </div>
-                    </div>
-                </div>                 
-            </div>                  
-    </section>
     @if($breakfasts->count())
         <section class="breakfast">
             <h2>{{ __('Breakfast Recipes') }}</h2>

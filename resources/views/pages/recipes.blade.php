@@ -8,7 +8,7 @@
 </div>
 
 <div class="container">
-        @if($breakfasts->count() > 0)
+        @if($breakfasts->count())
         <section class="breakfast">
             <h2>{{ __('Breakfast Recipes') }}</h2>
                 <div class="recipe-container">
@@ -27,7 +27,7 @@
                 </div>
         </section>
         @endif
-        @if($breads->count() > 0)
+        @if($breads->count())
         <section class="bread">
             <h2>{{ __('Bread Recipes') }}</h2>
                 <div class="recipe-container">
@@ -46,7 +46,7 @@
                 </div>
         </section>
         @endif
-        @if($burgers->count() > 0)
+        @if($burgers->count())
         <section class="burger">
             <h2>{{ __('Burger Recipes') }}</h2>
                 <div class="recipe-container">
@@ -65,7 +65,7 @@
                 </div>
         </section>
         @endif
-        @if($meats->count() > 0)
+        @if($meats->count())
         <section class="meat">
             <h2>{{ __('Meat Recipes') }}</h2>
                 <div class="recipe-container">
@@ -84,7 +84,7 @@
                 </div>
         </section>
         @endif
-        @if($pastas->count() > 0)
+        @if($pastas->count())
         <section class="pasta">
             <h2>{{ __('Pasta Recipes') }}</h2>
                 <div class="recipe-container">
@@ -103,7 +103,7 @@
                 </div>
         </section>
         @endif
-        @if($pizzas->count() > 0)
+        @if($pizzas->count())
         <section class="pizza">
             <h2>{{ ('Pizza Recipes') }}</h2>
                 <div class="recipe-container">
@@ -122,7 +122,7 @@
                 </div>
         </section>
         @endif
-        @if($soups->count() > 0)
+        @if($soups->count())
         <section class="soup">
             <h2>{{ __('Soup Recipes') }}</h2>
                 <div class="recipe-container">
@@ -141,7 +141,7 @@
                 </div>
         </section>
         @endif
-        @if($cakes->count() > 0)
+        @if($cakes->count())
         <section class="cake">
             <h2>{{ __('Cake Recipes') }}</h2>
                 <div class="recipe-container">
@@ -160,7 +160,7 @@
                 </div>
         </section>
         @endif
-        @if($vegans->count() > 0)
+        @if($vegans->count())
         <section class="vegan">
             <h2>{{ __('Vegan Recipes') }}</h2>
                 <div class="recipe-container">

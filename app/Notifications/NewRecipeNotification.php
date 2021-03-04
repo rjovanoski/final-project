@@ -49,7 +49,7 @@ class NewRecipeNotification extends Notification
             ->line('New Recipe was created: '.$this->recipe->name)
             ->line('Recipe creator: '.$this->user->name)
             ->line('User email: '.$this->user->email)
-            ->action('Login to approve', route('admin.edit',$this->recipe->id));
+            ->action('Login to approve', route('admin.recipe.edit',$this->recipe->id));
     }
 
     /**

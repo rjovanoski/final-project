@@ -26,14 +26,22 @@ Route::group(['prefix' => 'recipes', 'namespace' => 'Page', 'as' => 'recipes.'],
 Auth::routes();
 
 Route::resource('/user', 'User\UserController')->except('create', 'show', 'store');
-Route::delete('/user/{user}/avatar/delete', 'User\UserController@avatarDestroy')->name('user.avatar.delete');
+
+Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], function(){
+    Route::delete('/{user}/avatar/delete', 'UserController@avatarDestroy')->name('avatar.delete');
+    Route::patch('/{user}/password-update', 'UserController@passwordUpdate')->name('passwordUpdate');
+});
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function(){
     Route::get('/', 'AdminController@index')->name('index');
-    Route::get('recipe/{recipe}/edit', 'AdminController@edit')->name('edit');
-    Route::patch('recipe/{recipe}', 'AdminController@update')->name('update');
-    Route::get('user/recipes', 'AdminController@userRecipes')->name('userRecipes');
-    Route::delete('recipe/{recipe}', 'AdminController@destroy')->name('destroy');
+    Route::get('/edit', 'AdminController@edit')->name('edit');
+    Route::patch('/update', 'AdminController@update')->name('update');
+    Route::delete('/{user}/destroy', 'AdminController@destroy')->name('destroy');
+    Route::patch('/{user}/password-update', 'AdminController@passwordUpdate')->name('passwordUpdate');
+    Route::get('recipe/{recipe}/edit', 'RecipeManagementController@edit')->name('recipe.edit');
+    Route::patch('recipe/{recipe}', 'RecipeManagementController@update')->name('recipe.update');
+    Route::get('user/recipes', 'RecipeManagementController@userRecipes')->name('userRecipes');
+    Route::delete('recipe/{recipe}', 'RecipeManagementController@destroy')->name('recipe.destroy');
 });
 
 Route::resource('/recipe', 'Recipe\RecipeController');

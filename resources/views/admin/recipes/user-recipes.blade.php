@@ -11,6 +11,7 @@
                 </div>
                 <div class="card-body"> 
                     <x-alert />
+                    @if($recipes->count())
                     <table>
                         <thead>
                           <tr>
@@ -28,7 +29,7 @@
                                 <td>{{ $recipe->name }}</td>
                                 <td>{{ $recipe->user->name }}</td>
                                 <td>
-                                    @if($recipe->status == 1)
+                                    @if($recipe->status)
                                     {{ __('Approved') }}
                                     @else
                                     {{ __('Pending') }}
@@ -36,14 +37,14 @@
                                 </td>                                
                                 <td>
                                     @if($recipe->status == 0)
-                                    <a href="{{ route('admin.edit',$recipe->id) }}" class="btn btn-primary">{{ __('View') }}</a>
-                                    <a href="{{ route('admin.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();
+                                    <a href="{{ route('admin.recipe.edit',$recipe->id) }}" class="btn btn-primary">{{ __('View') }}</a>
+                                    <a href="{{ route('admin.recipe.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();
                                         if(confirm('Are you sure?')){
                                             document.getElementById('form-destroy-{{$recipe->id}}')
                                             .submit()
                                         }">{{ __('Delete') }}</a>
 
-                                    <form action="{{ route('admin.destroy',$recipe->id) }}" id="{{ 'form-destroy-'.$recipe->id }}" method="post" style="display:none">
+                                    <form action="{{ route('admin.recipe.destroy',$recipe->id) }}" id="{{ 'form-destroy-'.$recipe->id }}" method="post" style="display:none">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -54,7 +55,10 @@
                             </tr>
                             @endforeach
                         </tbody>
-                      </table>
+                    </table>
+                    @else
+                        <h3>{{ __('No recipes to approve') }}</h3>
+                    @endif
                 </div>
             </div>
         </div>

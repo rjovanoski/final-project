@@ -14,8 +14,8 @@
             <p>{{ __('It is for cooks who care about design and want to create a beautiful kitchen.') }}</p>
             <p>{{ __('It’s a place to dive in deep, and embrace the joy of one of our basic needs: Food, cooked at home, nourishing ourselves and our households.') }}</p>
             <p>{{ __('You can find thousands of recipes submitted by our community and cooked by our visitors.') }}</p>
-            <p>{{ __('We depend on—and we look forward to—your ideas, feedback, and support. So get ready for some inspiration and come hang out!') }}</p>
-            <p>{{ __('We look forward to cooking with you!') }}</p>
+            <p>{{ __('We depend on and we look forward to your ideas, feedback, and support. So get ready for some inspiration and come hang out!') }}</p>
+            <p>{{ __('We look forward cooking with you!') }}</p>
         </div>
     </div>
 </div>

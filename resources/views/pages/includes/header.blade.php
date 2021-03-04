@@ -59,6 +59,7 @@
                         @if(auth()->user()->role == 'admin')
                             <a href="{{ route('admin.index') }}" class="dropdown-link">{{ __('Admin') }}</a>
                             <a href="{{ route('admin.userRecipes') }}" class="dropdown-link">{{ __('Recipes') }}</a>
+                            <a href="{{ route('admin.edit',auth()->id()) }}" class="dropdown-link">{{ __('Settings') }}</a>
                         @else
                             <a href="{{ route('user.index') }}" class="dropdown-link">{{ __('Profile') }}</a>
                             <a href="{{ route('recipe.index') }}" class="dropdown-link">{{ __('My Recipes') }}</a>

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Recipe;
 use App\User;
-use Illuminate\Support\Facades\Storage;
-use App\Notifications\ApprovedRecipeNotification;
-use App\Notifications\DeletedRecipeNotification;
+use Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -23,47 +21,55 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $recipe = Recipe::findOrFail($id);
-
-        return view('admin.edit', compact('recipe'));
+        return view('admin.edit');
     }
 
-    public function update($id)
+    public function update(Request $request)
     {
-        $recipe = Recipe::findOrFail($id);
-        
-        if (request()->status && request()->status == 1) {
+        request()->validate([
+            'name' => 'required|string',
+            'username' => 'required|string',
+            'email' => 'required|email',
+        ]);
 
-            $recipe->update([
-                'status' => request()->status
+        Auth::user()->update([
+            'name' => request()->name,
+            'username' => request()->username,
+            'email' => request()->email,
+        ]);
+
+        return redirect()->back()->with('message', 'Profile Updated');
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('home');
+    }
+
+    public function passwordUpdate(User $user)
+    {
+        request()->validate([
+            'old_password' => 'required|string|min:8',
+            'new_password' => 'required|string|min:8',
+            'confirm_new_password' => 'required|same:new_password',
+        ]);
+
+        $user = Auth::user();
+
+        if (Hash::check(request()->old_password, $user->password)) {
+            
+            $user->update([
+                'password' => Hash::make(request()->new_password)
             ]);
 
-            $recipe->user->notify(new ApprovedRecipeNotification($recipe));             
-                          
+            return redirect()->back()->with('message', 'Password updated successfully');
+
         }else {
-            return redirect()->back()->with('message', 'Please approve the recipe');
-        }        
-
-        return redirect()->route('admin.index')->with('message', 'Recipe approved');
-    }
-
-    public function destroy(Recipe $recipe)
-    {
-        Storage::disk('public')->delete("images/$recipe->type/$recipe->image");
-
-        $recipe->delete(); 
-        
-        $recipe->user->notify(new DeletedRecipeNotification($recipe));
-
-        return redirect()->route('admin.index')->with('message', 'Recipe Deleted Successfully');
-    }
-
-    public function userRecipes()
-    {
-        $recipes = Recipe::all();
-    
-        return view('admin.user-recipes', compact('recipes'));
+            return redirect()->back()->with('message', 'Incorrect old password!');
+        }
     }
 }

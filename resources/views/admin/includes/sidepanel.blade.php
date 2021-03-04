@@ -17,6 +17,9 @@
                     <a href="{{ route('admin.userRecipes') }}" class="dropdown-link">{{ __('Recipes') }}</a>
                 </li>
                 <li class="dropdown-item">
+                    <a href="{{ route('admin.edit',auth()->id()) }}" class="dropdown-link">{{ __('Settings') }}</a>
+                </li>
+                <li class="dropdown-item">
                     <a href="{{ route('logout') }}" class="dropdown-link"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

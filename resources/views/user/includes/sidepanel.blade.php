@@ -12,12 +12,14 @@
                     <a href="{{ route('user.index') }}" class="dropdown-link">
                         {{ auth()->user()->name }}
                     </a>
-                </li>                
+                </li> 
+                @if(auth()->user()->recipes->count())               
                 <li class="dropdown-item">
                     <a href="{{ route('recipe.index') }}" class="dropdown-link">
                         {{ __('Recipes') }}
                     </a>
                 </li>
+                @endif
                 <li class="dropdown-item">
                     <a href="{{ route('recipe.create') }}" class="dropdown-link">
                         {{ __('New Recipe') }}

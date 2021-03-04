@@ -32,7 +32,7 @@
                                             </span>
                                         @enderror
                                     </div>
-                                    <a href="{{ route('user.avatar.delete',auth()->id()) }}" class="btn btn-danger"onclick="event.preventDefault();
+                                    <a href="{{ route('user.avatar.delete',auth()->id()) }}" class="btn btn-danger mt-1"onclick="event.preventDefault();
                                         if(confirm('Are you sure?')){
                                             document.getElementById('form-destroy-avatar-{{auth()->id()}}')
                                             .submit()
@@ -159,16 +159,16 @@
                     <h3>{{ __('Change Password') }}</h3>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.update',auth()->id()) }}" enctype="multipart/form-data" class="col">
+                    <form method="POST" action="{{ route('user.passwordUpdate',auth()->id()) }}" class="col">
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
-                            <label for="old_password" class="col">{{ __('Current password') }}</label>
+                            <label for="old_password" class="col">{{ __('Old password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="old_password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                                <input id="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" name="old_password">
 
-                                @error('password')
+                                @error('old_password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -179,9 +179,9 @@
                             <label for="new_password" class="col">{{ __('New password') }}</label>
 
                             <div class="col">
-                                <input id="new_password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                                <input id="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password">
 
-                                @error('password')
+                                @error('new_password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -192,9 +192,9 @@
                             <label for="confirm_new_password" class="col">{{ __('Confirm password') }}</label>
 
                             <div class="col">
-                                <input id="confirm_new_password" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                                <input id="confirm_new_password" type="password" class="form-control @error('confirm_new_password') is-invalid @enderror" name="confirm_new_password">
 
-                                @error('password')
+                                @error('confirm_new_password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

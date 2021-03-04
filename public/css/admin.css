@@ -115,6 +115,7 @@ h3{
     padding: 1rem 1rem;
     box-shadow: 0.1rem 0.1rem 0.5rem #375585;
     border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
 .card .card-header{
     text-align: left;
@@ -307,6 +308,10 @@ table tr:nth-child(odd){
         flex-direction: row-reverse;
         justify-content: space-between;
         padding-top: 1rem;
+    }
+    .card-body .admin-form{
+        display: flex;
+        flex-direction: column;
     }
     .card-body .image-container{
         width: 40%;

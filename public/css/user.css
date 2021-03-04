@@ -53,6 +53,9 @@ h4{
     text-transform: uppercase;
     margin: 1rem 0;
 }
+.mt-1{
+    margin-top: 1rem;
+}
 .sidepanel{
     display: flex;
     flex-direction: row;

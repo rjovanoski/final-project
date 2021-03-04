@@ -1,30 +1,25 @@
 @extends('admin.layout.admin')
 
 @section('content')
+
 <div class="container">
-    <div>
-        <div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h3>{{ __('Recipe') }} {{ $recipe->name }}</h3>
+                    <h3>{{ __('Admin Information') }}</h3>
                 </div>
 
                 <div class="card-body">
                     <x-alert />
-                    <form method="POST" action="{{ route('admin.update',$recipe->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.update',auth()->id()) }}" class="admin-form">
                         @csrf
                         @method('PATCH')
-                        <div class="image-container">
-                            <div class="recipe-image">
-                                <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" alt="Image Preview" class="imageRecipe-preview edit-image">
-                            </div>
-                        </div>
-                        <div class="input">
-                            <div class="form-group">
-                                <label for="name">{{ __('Name') }}</label>
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
-                                <div class="col">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $recipe->name }}" readonly>
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ auth()->user()->name }}">
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -34,12 +29,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="type">{{ __('Type') }}</label>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
-                                <div class="col">
-                                    <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ $recipe->type }}" readonly>
-                                    @error('type')
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ auth()->user()->email }}">
+                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -47,55 +42,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="ingredients" class="col-md-4 col-form-label text-md-right">{{ __('List of ingredients') }}</label>
+                            <div class="form-group row">
+                                <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
-                                <div class="col">
-                                    <textarea id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" readonly>{{ $recipe->ingredients }}</textarea>
-
-                                    @error('ingredients')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="preparation_time" class="col-md-4 col-form-label text-md-right">{{ __('Preparation time in minutes') }}</label>
-
-                                <div class="col">
-                                    <input id="preparation_time" type="number" class="form-control @error('preparation_time') is-invalid @enderror" name="preparation_time" value="{{ $recipe->preparation_time }}" readonly>
-
-                                    @error('preparation_time')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="preparation" class="col-md-4 col-form-label text-md-right">{{ __('Preparation') }}</label>
-
-                                <div class="col">
-                                    <textarea name="preparation" id="preparation" class="form-control @error('preparation') is-invalid @enderror" cols="30" rows="10" readonly>{{ $recipe->preparation }}</textarea>
-
-                                    @error('preparation')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
-
-                                <div class="col">
-                                    <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10" readonly>{{ $recipe->description }}</textarea>
-
-                                    @error('description')
+                                <div class="col-md-6">
+                                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ auth()->user()->username }}">
+                                    @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -103,36 +55,80 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group checkbox">
-                                <label for="status" class="label-checkbox">{{ __('Approve Recipe') }}</label>                                                              
-                                <input id="status" type="checkbox" class="form-control @error('status') is-invalid @enderror checkbox-input" name="status" value="1">
-                                    @error('status')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                            </div>
-
-                            <div class="form-group buttons">
-                                <div class="col">
+                            <div class="form-group">
+                                <div class="row">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Confirm') }}
+                                        {{ __('Update') }}
                                     </button>
-                                    <a href="{{ route('admin.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();
+                                    <a href="{{ route('admin.destroy',auth()->id()) }}" class="btn btn-danger" onclick="event.preventDefault();
                                         if(confirm('Are you sure?')){
-                                            document.getElementById('form-destroy-{{$recipe->id}}')
+                                            document.getElementById('form-destroy-{{auth()->id()}}')
                                             .submit()
-                                        }">{{ __('Delete') }}
+                                        }">{{ __('Delete Account') }}
                                     </a>
                                 </div>
                             </div>
-                        </div>
                     </form>
                 </div>
-                <form action="{{ route('admin.destroy',$recipe->id) }}" id="{{ 'form-destroy-'.$recipe->id }}" method="post" style="display:none">
+                <form action="{{ route('admin.destroy',auth()->id()) }}" id="{{ 'form-destroy-'.auth()->id() }}" method="post" style="display:none">
                     @csrf
                     @method('delete')
                 </form>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>{{ __('Change Password') }}</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('admin.passwordUpdate',auth()->id()) }}" class="admin-form">
+                        @csrf
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="old_password" class="col">{{ __('Old password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" name="old_password">
+
+                                @error('old_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password" class="col">{{ __('New password') }}</label>
+
+                            <div class="col">
+                                <input id="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password">
+
+                                @error('new_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_new_password" class="col">{{ __('Confirm password') }}</label>
+
+                            <div class="col">
+                                <input id="confirm_new_password" type="password" class="form-control @error('confirm_new_password') is-invalid @enderror" name="confirm_new_password">
+
+                                @error('confirm_new_password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Update') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

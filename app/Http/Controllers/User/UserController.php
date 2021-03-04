@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Auth;
 use App\User;
 use App\Recipe;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -95,5 +96,28 @@ class UserController extends Controller
         ]);
 
         return redirect()->back()->with('message', 'Avatar Deleted');
+    }
+
+    public function passwordUpdate(User $user)
+    {
+        request()->validate([
+            'old_password' => 'required|string|min:8',
+            'new_password' => 'required|string|min:8',
+            'confirm_new_password' => 'required|same:new_password',
+        ]);
+
+        $user = Auth::user();
+
+        if (Hash::check(request()->old_password, $user->password)) {
+            
+            $user->update([
+                'password' => Hash::make(request()->new_password)
+            ]);
+
+            return redirect()->back()->with('message', 'Password updated successfully');
+
+        }else {
+            return redirect()->back()->with('message', 'Incorrect old password!');
+        }
     }
 }

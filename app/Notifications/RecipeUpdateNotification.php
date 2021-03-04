@@ -49,7 +49,7 @@ class RecipeUpdateNotification extends Notification
             ->line('Recipe '.$this->recipe->name.' was updated')
             ->line('By user: '.$this->user->name)
             ->line('User email: '.$this->user->email)
-            ->action('Login to approve', route('admin.edit',$this->recipe->id));
+            ->action('Login to approve', route('admin.recipe.edit',$this->recipe->id));
     }
 
     /**

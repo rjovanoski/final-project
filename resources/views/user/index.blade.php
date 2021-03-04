@@ -38,14 +38,14 @@
                                 <td>{{ $recipe->name }}</td>
                                 <td>{{ ucfirst($recipe->type) }}</td>
                                 <td>
-                                    @if($recipe->status == 1)
+                                    @if($recipe->status)
                                     {{ __('Approved') }}
                                     @else
                                     {{ __('Pending') }}
                                     @endif
                                 </td> 
                                 <td>
-                                    @if($recipe->status == 1)
+                                    @if($recipe->status)
                                     <a href="{{ route('recipe.show',$recipe->id) }}" class="btn btn-info">{{ __('Show') }}</a>   
                                     <a href="{{ route('recipe.edit',$recipe->id) }}" class="btn btn-primary">{{ __('Update') }}</a>                                
                                     <a href="{{ route('recipe.destroy',$recipe->id) }}" class="btn btn-danger" onclick="event.preventDefault();

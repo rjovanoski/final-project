@@ -22,16 +22,16 @@ class RecipeController extends Controller
     {
         $userId = Auth::id();
 
-        $breakfasts = Recipe::where('user_id', $userId)->where('type', '=', 'breakfast')->where('status', '=', 1)->orderBy('created_at')->get();
-        $breads = Recipe::where('user_id', $userId)->where('type', '=', 'bread')->where('status', '=', 1)->orderBy('created_at')->get();
-        $meats = Recipe::where('user_id', $userId)->where('type', '=', 'meat')->where('status', '=', 1)->orderBy('created_at')->get();
-        $burgers = Recipe::where('user_id', $userId)->where('type', '=', 'burger')->where('status', '=', 1)->orderBy('created_at')->get();
-        $soups = Recipe::where('user_id', $userId)->where('type', '=', 'soup')->where('status', '=', 1)->orderBy('created_at')->get();
-        $pastas = Recipe::where('user_id', $userId)->where('type', '=', 'pasta')->where('status', '=', 1)->orderBy('created_at')->get();
-        $pizzas = Recipe::where('user_id', $userId)->where('type', '=', 'pizza')->where('status', '=', 1)->orderBy('created_at')->get();
-        $cakes = Recipe::where('user_id', $userId)->where('type', '=', 'cake')->where('status', '=', 1)->orderBy('created_at')->get();
-        $vegans = Recipe::where('user_id', $userId)->where('type', '=', 'vegan')->where('status', '=', 1)->orderBy('created_at')->get();
-
+        $breakfasts = Recipe::where('user_id', $userId)->where('type', '=', 'breakfast')->orderBy('created_at')->get();
+        $breads = Recipe::where('user_id', $userId)->where('type', '=', 'bread')->orderBy('created_at')->get();
+        $meats = Recipe::where('user_id', $userId)->where('type', '=', 'meat')->orderBy('created_at')->get();
+        $burgers = Recipe::where('user_id', $userId)->where('type', '=', 'burger')->orderBy('created_at')->get();
+        $soups = Recipe::where('user_id', $userId)->where('type', '=', 'soup')->orderBy('created_at')->get();
+        $pastas = Recipe::where('user_id', $userId)->where('type', '=', 'pasta')->orderBy('created_at')->get();
+        $pizzas = Recipe::where('user_id', $userId)->where('type', '=', 'pizza')->orderBy('created_at')->get();
+        $cakes = Recipe::where('user_id', $userId)->where('type', '=', 'cake')->orderBy('created_at')->get();
+        $vegans = Recipe::where('user_id', $userId)->where('type', '=', 'vegan')->orderBy('created_at')->get();
+        
         return view('recipes.index', compact('breakfasts', 'breads', 'meats', 'burgers', 'soups', 'pastas', 'pizzas', 'cakes', 'vegans'));
     }
 

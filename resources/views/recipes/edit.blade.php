@@ -14,9 +14,8 @@
                         @csrf
                         @method('PATCH')
                         <div class="image-container">
-                            <div class="image-preview" id="previewContainer">
-                                <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" srcset="" alt="Image Preview" class="imageRecipe-preview edit-image">
-                                <span class="default-text">{{ __('Image Preview') }}</span>
+                            <div class="recipe-image">
+                                <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" id="recipeImage" alt="Image Preview" class="imageRecipe-preview edit-image">
                             </div>
                             <div class="row">
                                 <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}<small>*</small></label>
@@ -135,6 +134,6 @@
 
 @section('script')
 
-<script src="{{ asset('js/file_preview.js') }}" defer></script>
+<script src="{{ asset('js/recipe_preview.js') }}" defer></script>
 
 @endsection

@@ -17,7 +17,7 @@
                         @method('PATCH')
                         <div class="image-container">
                             <div class="recipe-image">
-                                <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" id="recipeImage" alt="Image Preview" class="imageRecipe-preview edit-image">
+                                <img src="{{ asset('storage/images/recipes/'.$recipe->type.'/'.$recipe->image) }}" id="recipeImage" alt="Image Preview" class="imageRecipe-preview edit-image">
                             </div>
                             <div class="row">
                                 <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}<small>*</small></label>
@@ -79,7 +79,7 @@
                             <label for="preparation_time" class="col-md-4 col-form-label text-md-right">{{ __('Preparation time in minutes') }}<small>*</small></label>
 
                             <div class="col-md-6">
-                                <input id="preparation_time" type="number" class="form-control @error('preparation_time') is-invalid @enderror" name="preparation_time" value="{{ $recipe->preparation_time }}">
+                                <input id="preparation_time" type="number" min="1" class="form-control @error('preparation_time') is-invalid @enderror" name="preparation_time" value="{{ $recipe->preparation_time }}">
 
                                 @error('preparation_time')
                                     <span class="invalid-feedback" role="alert">

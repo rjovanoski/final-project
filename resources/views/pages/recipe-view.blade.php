@@ -11,7 +11,7 @@
         <div class="container-recipe">
             <div class="recipe">
                 <div class="recipe-image">
-                    <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" alt="">
+                    <img src="{{ asset('storage/images/recipes/'.$recipe->type.'/'.$recipe->image) }}" alt="{{ $recipe->image }}">
                 </div>
                 <div class="recipe-user">
                     <div class="user-name">
@@ -26,7 +26,7 @@
                     </div>
                     @isset($recipe->user->avatar)
                     <div class="user-image">
-                        <img src="{{ asset('storage/images/user/'.$recipe->user->id.'/'.$recipe->user->avatar) }}" alt="">
+                        <img src="{{ asset('storage/images/user/'.$recipe->user->id.'/'.$recipe->user->avatar) }}" alt="{{ $recipe->user->avatar }}">
                     </div>
                     @endisset
                 </div>

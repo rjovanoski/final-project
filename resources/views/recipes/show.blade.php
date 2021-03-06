@@ -12,7 +12,7 @@
                     <h3>{{ $recipe->name }}</h3>
                 </div>
                 <div class="card-image">
-                    <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" alt="">
+                    <img src="{{ asset('storage/images/recipes/'.$recipe->type.'/'.$recipe->image) }}" alt="">
                 </div>
                 <div class="card-body"> 
                     <div class="card-text">

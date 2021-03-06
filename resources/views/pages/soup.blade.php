@@ -14,7 +14,7 @@
         @foreach($soups as $soup)
             <div class="card">
                 <div class="image">
-                    <img src="{{ asset('storage/images/soup/'.$soup->image) }}" alt="{{ $soup->image }}">
+                    <img src="{{ asset('storage/images/recipes/soup/'.$soup->image) }}" alt="{{ $soup->image }}">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $soup->name }}</h5>

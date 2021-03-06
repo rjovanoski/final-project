@@ -14,7 +14,7 @@
         @foreach($vegans as $vegan)
             <div class="card">
                 <div class="image">
-                    <img src="{{ asset('storage/images/vegan/'.$vegan->image) }}" alt="{{ $vegan->image }}">
+                    <img src="{{ asset('storage/images/recipes/vegan/'.$vegan->image) }}" alt="{{ $vegan->image }}">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ $vegan->name }}</h5>

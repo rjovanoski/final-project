@@ -18,7 +18,7 @@
                         @method('PATCH')
                         <div class="image-container">
                             <div class="recipe-image">
-                                <img src="{{ asset('storage/images/'.$recipe->type.'/'.$recipe->image) }}" alt="Image Preview" class="imageRecipe-preview edit-image">
+                                <img src="{{ asset('storage/images/recipes/'.$recipe->type.'/'.$recipe->image) }}" alt="Image Preview" class="imageRecipe-preview edit-image">
                             </div>
                         </div>
                         <div class="input">

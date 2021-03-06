@@ -58,7 +58,7 @@ class RecipeController extends Controller
                 
             $filename = request()->image->getClientOriginalname();
 
-            request()->image->storeAs('images/'.request()->type.'/', $filename, 'public');
+            request()->image->storeAs('images/recipes/'.request()->type.'/', $filename, 'public');
                 
         }
         
@@ -121,9 +121,9 @@ class RecipeController extends Controller
             
             if (request()->image != $filename) {
                 
-                Storage::disk('public')->delete("images/$recipe->type/$recipe->image");
+                Storage::disk('public')->delete("images/recipes/$recipe->type/$recipe->image");
 
-                request()->image->storeAs('images/'.request()->type.'/', $filename, 'public');
+                request()->image->storeAs('images/recipes/'.request()->type.'/', $filename, 'public');
 
                 $recipe->update([
                     'image' => $filename,
@@ -156,7 +156,7 @@ class RecipeController extends Controller
 
     public function destroy(Recipe $recipe)
     {
-        Storage::disk('public')->delete("images/$recipe->type/$recipe->image");
+        Storage::disk('public')->delete("images/recipes/$recipe->type/$recipe->image");
 
         $recipe->delete(); 
         

@@ -17,7 +17,7 @@
                     @foreach($breakfasts as $breakfast)
                     <div class="card">
                         <div class="image">
-                            <img src="{{ asset('storage/images/breakfast/'.$breakfast->image) }}" alt="{{ $breakfast->image }}">
+                            <img src="{{ asset('storage/images/recipes/breakfast/'.$breakfast->image) }}" alt="{{ $breakfast->image }}">
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">{{ $breakfast->name }}</h5>
@@ -36,7 +36,7 @@
                     @foreach($breads as $bread)
                     <div class="card">
                         <div class="image">
-                            <img src="{{ asset('storage/images/bread/'.$bread->image) }}" alt="{{ $bread->image }}">
+                            <img src="{{ asset('storage/images/recipes/bread/'.$bread->image) }}" alt="{{ $bread->image }}">
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">{{ $bread->name }}</h5>
@@ -55,7 +55,7 @@
                     @foreach($burgers as $burger)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/burger/'.$burger->image) }}" alt="{{ $burger->image }}">
+                                <img src="{{ asset('storage/images/recipes/burger/'.$burger->image) }}" alt="{{ $burger->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $burger->name }}</h5>
@@ -74,7 +74,7 @@
                     @foreach($meats as $meat)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/meat/'.$meat->image) }}" alt="{{ $meat->image }}">
+                                <img src="{{ asset('storage/images/recipes/meat/'.$meat->image) }}" alt="{{ $meat->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $meat->name }}</h5>
@@ -93,7 +93,7 @@
                     @foreach($pastas as $pasta)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/pasta/'.$pasta->image) }}" alt="{{ $pasta->image }}">
+                                <img src="{{ asset('storage/images/recipes/pasta/'.$pasta->image) }}" alt="{{ $pasta->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $pasta->name }}</h5>
@@ -112,7 +112,7 @@
                     @foreach($pizzas as $pizza)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/pizza/'.$pizza->image) }}" alt="{{ $pizza->image }}">
+                                <img src="{{ asset('storage/images/recipes/pizza/'.$pizza->image) }}" alt="{{ $pizza->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $pizza->name }}</h5>
@@ -131,7 +131,7 @@
                     @foreach($soups as $soup)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/soup/'.$soup->image) }}" alt="{{ $soup->image }}">
+                                <img src="{{ asset('storage/images/recipes/soup/'.$soup->image) }}" alt="{{ $soup->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $soup->name }}</h5>
@@ -150,7 +150,7 @@
                     @foreach($cakes as $cake)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/cake/'.$cake->image) }}" alt="{{ $cake->image }}">
+                                <img src="{{ asset('storage/images/recipes/cake/'.$cake->image) }}" alt="{{ $cake->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $cake->name }}</h5>
@@ -169,7 +169,7 @@
                     @foreach($vegans as $vegan)
                         <div class="card">
                             <div class="image">
-                                <img src="{{ asset('storage/images/vegan/'.$vegan->image) }}" alt="{{ $vegan->image }}">
+                                <img src="{{ asset('storage/images/recipes/vegan/'.$vegan->image) }}" alt="{{ $vegan->image }}">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ $vegan->name }}</h5>

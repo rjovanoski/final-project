@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Vegan Recipes')
+
 @section('content')
 
 <div class="vegan-hero">

@@ -1,5 +1,7 @@
 @extends('admin.layout.admin')
 
+@section('title', 'Admin Profile')
+
 @section('content')
 
 <div class="container">

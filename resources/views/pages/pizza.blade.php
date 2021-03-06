@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Pizza Recipes')
+
 @section('content')
 
 <div class="pizza-hero">

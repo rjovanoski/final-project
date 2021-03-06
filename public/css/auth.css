@@ -109,6 +109,12 @@ body{
 .card .btn-link{
     color: #7c4937;
 }
+.alert-success{
+    color: #7c4937;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
 .invalid-feedback{
     display: inline-block;
     color: #e02f2f;

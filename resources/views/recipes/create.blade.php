@@ -1,5 +1,7 @@
 @extends('user.layout.user')
 
+@section('title', 'New Recipe')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

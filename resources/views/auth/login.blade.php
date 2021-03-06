@@ -1,10 +1,12 @@
-@extends('auth.layout.authentication')
+@extends('auth.layout.auth')
+
+@section('title', 'Login')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2><a href="{{ url('/') }}">{{ __('Smart Food Ingredients') }}</a></h2>
+            <h2><a href="{{ url('/') }}">{{ config('app.name') }}</a></h2>
             <div class="card">
                 <div class="card-header">
                     <h3>{{ __('Login') }}</h3>

@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'About Us')
+
 @section('content')
 
 <div class="container">

@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Home')
+
 @section('content')
 
 <div class="hero">

@@ -1,5 +1,7 @@
 @extends('user.layout.user')
 
+@section('title', 'Profile')
+
 @section('content')
 
 <div class="container">

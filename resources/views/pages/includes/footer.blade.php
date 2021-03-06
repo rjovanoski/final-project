@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="container">
         <div class="footer-logo">
-            <h3>{{ __('Smart Food Ingredients') }}</h3>
+            <h3>{{ config('app.name') }}</h3>
             <p>{{ __("Need something new, healthy and delicious? This is the place where you can find the best recipes for your cuisine, prepare them and share something new.
                 Join us and don't forget to cook with love.") }}</p>
         </div>

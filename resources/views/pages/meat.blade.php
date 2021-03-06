@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Meat Recipes')
+
 @section('content')
 
 <div class="meat-hero">

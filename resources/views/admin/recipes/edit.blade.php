@@ -1,5 +1,7 @@
 @extends('admin.layout.admin')
 
+@section('title', $recipe->name)
+
 @section('content')
 <div class="container">
     <div>

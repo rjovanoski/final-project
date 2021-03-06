@@ -1,5 +1,7 @@
 @extends('user.layout.user')
 
+@section('title', $recipe->name)
+
 @section('content')
 
 <div class="container">

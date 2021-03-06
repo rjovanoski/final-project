@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', $recipe->name)
+
 @section('content')
 
 <div id="fb-root"></div>

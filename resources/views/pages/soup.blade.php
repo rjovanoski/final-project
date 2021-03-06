@@ -1,5 +1,7 @@
 @extends('pages.layout.master')
 
+@section('title', 'Soup Recipes')
+
 @section('content')
 
 <div class="soup-hero">

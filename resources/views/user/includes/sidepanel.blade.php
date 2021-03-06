@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="sidepanel">
             <div class="logo">
-                <a href="{{ url('/') }}">{{ __('Smart Food Ingredients') }}</a>
+                <a href="{{ url('/') }}">{{ config('app.name') }}</a>
             </div>
             <div class="menu">
                 <i class="fa fa-bars"></i>
@@ -38,7 +38,7 @@
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
+                        @csrf
                     </form>
                 </li>
             </ul>

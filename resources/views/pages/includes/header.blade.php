@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="nav">
             <div class="logo">
-                <a href="{{ url('/') }}">{{ __('Smart Food Ingredients') }}</a>
+                <a href="{{ url('/') }}">{{ config('app.name') }}</a>
             </div>
             <div class="menu" id="menu">
                 <i class="fas fa-bars"></i>

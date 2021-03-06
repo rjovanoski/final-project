@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             'role' => 'admin',
             'name' => 'Admin',
             'username' => 'admin',
-            'email' => 'rade-6ba601@inbox.mailtrap.io',
+            'email' => 'admin@admin.com',
             'password' => Hash::make('admin123')
         ]);
     }

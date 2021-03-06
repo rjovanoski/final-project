@@ -387,6 +387,7 @@ section{
     text-align: center;
 }
 .box{
+    position: relative;
     margin: 0 auto;
     margin-bottom: 5rem;
     margin-top: 5rem;
@@ -457,6 +458,14 @@ section{
 }
 .box .btn-info:hover{
     background: #a7a7a7;
+}
+.box-footer h5{
+    position: absolute;
+    font-size: 3rem;
+    color: #e02f2f;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 20%;
 }
 .alert-message{
     color: #ffffff;
@@ -605,6 +614,14 @@ section{
     }
     .box-footer a{
         font-size: 1.4rem;
+    }
+    .box-footer h5{
+        position: absolute;
+        font-size: 5rem;
+        color: #e02f2f;
+        transform: rotate(45deg);
+        top: 50%;
+        left: 25%;
     }
     .invalid-feedback{
         font-size: 1.2rem;

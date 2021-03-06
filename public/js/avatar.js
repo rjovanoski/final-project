@@ -1,17 +1,15 @@
 $(document).ready(function (e) {
+  $('#avatar').change(function(){
+            
+  let reader = new FileReader();
  
-   
-    $('#avatar').change(function(){
-             
-     let reader = new FileReader();
+  reader.onload = (e) => { 
   
-     reader.onload = (e) => { 
-  
-       $('#previewAvatar').attr('src', e.target.result); 
-     }
-  
-     reader.readAsDataURL(this.files[0]); 
+    $('#previewAvatar').attr('src', e.target.result); 
+  }
+
+  reader.readAsDataURL(this.files[0]); 
     
-    });
+  });
     
 });

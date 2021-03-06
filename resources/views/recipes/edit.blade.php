@@ -134,6 +134,6 @@
 
 @section('script')
 
-<script src="{{ asset('js/recipe_preview.js') }}" defer></script>
+<script src="{{ asset('js/image_recipe_preview.js') }}" defer></script>
 
 @endsection

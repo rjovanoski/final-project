@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 
 class RecipeManagementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function edit($id)
     {
         $recipe = Recipe::findOrFail($id);

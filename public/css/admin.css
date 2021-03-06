@@ -109,6 +109,9 @@ h3{
     cursor: pointer; 
     padding: 1rem 0;
 }
+.active-link{
+    background: #375585;
+}
 .card{
     margin: 0 auto;
     max-width: 50rem;
@@ -190,6 +193,9 @@ h3{
     border-radius: .3rem;
     cursor: pointer;
     transition: .3s;
+}
+.card-body .btn:focus{
+    outline: none;
 }
 .card-body .btn-primary{
     background: #263a5a;

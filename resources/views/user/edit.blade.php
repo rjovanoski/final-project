@@ -41,7 +41,7 @@
                                 </div>
                             @else
                                 <div class="avatar">
-                                    <img src="" id="previewAvatar" alt="Image Preview" srcset="" class="user-avatar">
+                                    <img src="" id="previewAvatar" alt="Image Preview" class="user-avatar">
                                 </div>
                                 <div class="row">
                                     <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>

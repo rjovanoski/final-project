@@ -19,12 +19,11 @@
 </head>
 <body>
       
-    @include('pages.includes.header')
-      
-    <div id="app">
-        @yield('content')
-    </div>
+    @include('pages.includes.header')     
+
+    @yield('content')
     
     @yield('fb-script')
+
 </body>
 </html>

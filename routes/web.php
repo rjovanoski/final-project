@@ -34,7 +34,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'User', 'as' => 'user.'], funct
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function(){
     Route::get('/', 'AdminController@index')->name('index');
-    Route::get('/edit', 'AdminController@edit')->name('edit');
+    Route::get('/{user}/edit', 'AdminController@edit')->name('edit');
     Route::patch('/update', 'AdminController@update')->name('update');
     Route::delete('/{user}/destroy', 'AdminController@destroy')->name('destroy');
     Route::patch('/{user}/password-update', 'AdminController@passwordUpdate')->name('passwordUpdate');

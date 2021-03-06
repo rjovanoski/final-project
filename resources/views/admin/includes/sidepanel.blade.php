@@ -8,15 +8,15 @@
                 <i class="fa fa-bars"></i>
             </div>
             <ul class="dropdown-menu">
-                <li class="dropdown-item">
+                <li class="dropdown-item {{ 'admin' == request()->path() ? 'active-link' : ''}}">
                     <a href="{{ route('admin.index') }}" class="dropdown-link">
                         {{ auth()->user()->name }}
                     </a>
                 </li>
-                <li class="dropdown-item">
+                <li class="dropdown-item {{ 'admin/user/recipes' == request()->path() ? 'active-link' : ''}}"">
                     <a href="{{ route('admin.userRecipes') }}" class="dropdown-link">{{ __('Recipes') }}</a>
                 </li>
-                <li class="dropdown-item">
+                <li class="dropdown-item {{ 'admin/'.auth()->id().'/edit' == request()->path() ? 'active-link' : ''}}"">
                     <a href="{{ route('admin.edit',auth()->id()) }}" class="dropdown-link">{{ __('Settings') }}</a>
                 </li>
                 <li class="dropdown-item">

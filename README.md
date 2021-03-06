@@ -8,10 +8,13 @@ Predefined admin user
 
 - email admin@admin.com.
 - password admin123.
+- Has the option to change his information.
+- Administrator has two options for created recipe by a user - approve or delete.
 
 Register new user
 
 - User has the option to add and change his information.
+- User has the option to create, edit and delete recipes.
 - User has the option to delete his account.
 
 Create Recipe

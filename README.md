@@ -11,9 +11,9 @@ Predefined admin user
 
 Register new user
 
--User creates recipe.
--After the recipe is created by the user the administrator receives email notification that a new recipe is created.
--Administrator has two options - approve or delete the recipe.
--Administrator approves the recipe and user that created the recipe receives email notification that the recipe is approved.
--After approval the recipe appeares on the pages.
--After approval user can edit and delete the recipe. 
+- User creates recipe.
+- After the recipe is created by the user the administrator receives email notification that a new recipe is created.
+- Administrator has two options - approve or delete the recipe.
+- Administrator approves the recipe and user that created the recipe receives email notification that the recipe is approved.
+- After approval the recipe appeares on the pages.
+- After approval user can edit and delete the recipe. 

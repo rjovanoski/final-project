@@ -78,7 +78,7 @@ class UserController extends Controller
         
         foreach ($user->recipes as $recipe) {
 
-            Storage::disk('public')->delete("images/$recipe->type/$recipe->image");
+            Storage::disk('public')->delete("images/recipes/$recipe->type/$recipe->image");
         }
 
         $user->delete();

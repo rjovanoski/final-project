@@ -13,10 +13,10 @@
                         {{ auth()->user()->name }}
                     </a>
                 </li>
-                <li class="dropdown-item {{ 'admin/user/recipes' == request()->path() ? 'active-link' : ''}}"">
+                <li class="dropdown-item {{ 'admin/user/recipes' == request()->path() ? 'active-link' : ''}}">
                     <a href="{{ route('admin.userRecipes') }}" class="dropdown-link">{{ __('Recipes') }}</a>
                 </li>
-                <li class="dropdown-item {{ 'admin/'.auth()->id().'/edit' == request()->path() ? 'active-link' : ''}}"">
+                <li class="dropdown-item {{ 'admin/'.auth()->id().'/edit' == request()->path() ? 'active-link' : ''}}">
                     <a href="{{ route('admin.edit',auth()->id()) }}" class="dropdown-link">{{ __('Settings') }}</a>
                 </li>
                 <li class="dropdown-item">

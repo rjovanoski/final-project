@@ -9,7 +9,7 @@
             </div>
             <ul class="nav-list" id="navId">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link {{ '/' == request()->path() ? 'active-link' : ''}}"">{{ __('Home') }}</a>
+                    <a href="{{ route('home') }}" class="nav-link {{ '/' == request()->path() ? 'active-link' : ''}}">{{ __('Home') }}</a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown-recipes">
